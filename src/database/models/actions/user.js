@@ -3,10 +3,10 @@ import User from "@/database/models/user.model";
 import { NextResponse } from "next/server";
 
 export async function createOrUpdateUser(
-  username,
+  id,
   email_addresses,
   image_url,
-  id
+  username
 ) {
   try {
     await connectMongo();
@@ -58,7 +58,7 @@ export async function deleteUser(id) {
       }
     );
   } catch (e) {
-    console.error("Error creating or updating user:", e);
+    console.error("Error deleting user", e);
     // return NextResponse.json(
     //   { error: "Failed to delete user" },
     //   {

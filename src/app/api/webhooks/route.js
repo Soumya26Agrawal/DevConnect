@@ -14,14 +14,14 @@ export async function POST(req) {
 
     if (eventType === "user.created" || eventType === "user.updated") {
       // Handle user created event
-      console.log("User created:");
-      console.log("User updated:");
+      console.log("User created webhook:");
+      console.log("User updated webhook:");
       await createOrUpdateUser(id, email_addresses, image_url, username);
     }
 
     if (eventType === "user.deleted") {
       // Handle user deleted event
-      console.log("User deleted:");
+      console.log("User deleted webhook:");
       await deleteUser(id);
     }
 
