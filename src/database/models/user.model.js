@@ -1,6 +1,6 @@
 // models/User.js
 import mongoose from "mongoose";
-import { unique } from "next/dist/build/utils";
+
 // import bcrypt from "bcryptjs";
 const userSchema = new mongoose.Schema(
   {
