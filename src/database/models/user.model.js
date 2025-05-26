@@ -1,13 +1,20 @@
 // models/User.js
 import mongoose from "mongoose";
+import { unique } from "next/dist/build/utils";
 // import bcrypt from "bcryptjs";
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    clerkId: {
       type: String,
       required: true,
+      unique: true,
     },
     email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    username: {
       type: String,
       required: true,
       unique: true,
