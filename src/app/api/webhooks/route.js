@@ -16,7 +16,7 @@ export async function POST(req) {
       // Handle user created event
       console.log("User created:");
       console.log("User updated:");
-      await createOrUpdateUser(is, email_addresses, image_url, id);
+      await createOrUpdateUser(id, email_addresses, image_url, username);
     }
 
     if (eventType === "user.deleted") {
