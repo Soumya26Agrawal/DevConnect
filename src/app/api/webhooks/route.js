@@ -12,19 +12,17 @@ export async function POST(req) {
     );
     console.log("Webhook payload:", evt.data);
 
-    if (eventType === "user.created") {
+    if (eventType === "user.created" || eventType === "user.updated") {
       // Handle user created event
-      console.log("User created:", evt.data);
-    }
-    if (eventType === "user.updated") {
-      // Handle user updated event
+      console.log("User created:");
       console.log("User updated:");
-      await createOrUpdateUser(is,email_addresses, image_url, id);
+      await createOrUpdateUser(is, email_addresses, image_url, id);
     }
+
     if (eventType === "user.deleted") {
       // Handle user deleted event
-      console.log("User deleted:";
-        await deleteUser(id)
+      console.log("User deleted:");
+      await deleteUser(id);
     }
 
     return new Response("Webhook received", { status: 200 });
