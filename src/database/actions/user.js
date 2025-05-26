@@ -1,5 +1,5 @@
 import connectMongo from "@/database/connect.js";
-import User from "../models/user.model.js";
+import User from "@/database/models/user.model";
 import { NextResponse } from "next/server";
 
 export async function createOrUpdateUser(
