@@ -1,3 +1,4 @@
+import connectMongo from "@/database/connect.js";
 import User from "../user.model.js";
 import { NextResponse } from "next/server";
 
