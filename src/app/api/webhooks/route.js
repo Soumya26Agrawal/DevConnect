@@ -1,11 +1,12 @@
+import { createOrUpdateUser, deleteUser } from "@/database/models/actions/user";
 import { verifyWebhook } from "@clerk/nextjs/webhooks";
 
 export async function POST(req) {
   try {
     const evt = await verifyWebhook(req);
 
-    const { id } = evt.data;
-    const eventType = evt.type;
+    const { id, email_addresses, username, image_url } = evt?.data;
+    const eventType = evt?.type;
     console.log(
       `Received webhook with ID ${id} and event type of ${eventType}`
     );
@@ -17,11 +18,13 @@ export async function POST(req) {
     }
     if (eventType === "user.updated") {
       // Handle user updated event
-      console.log("User updated:", evt.data);
+      console.log("User updated:");
+      await createOrUpdateUser(is,email_addresses, image_url, id);
     }
     if (eventType === "user.deleted") {
       // Handle user deleted event
-      console.log("User deleted:", evt.data);
+      console.log("User deleted:";
+        await deleteUser(id)
     }
 
     return new Response("Webhook received", { status: 200 });
