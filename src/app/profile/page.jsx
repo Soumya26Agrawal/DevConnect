@@ -84,15 +84,15 @@ function Profile() {
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 text-sm sm:text-base text-center">
           <p className="bg-[#1F1F3A] px-4 py-2 rounded-lg shadow">
-            People you follow: <strong>90</strong>
+            Followers: <strong>90</strong>
           </p>
           <p className="bg-[#1F1F3A] px-4 py-2 rounded-lg shadow">
-            People following you: <strong>90</strong>
+            Following: <strong>90</strong>
           </p>
         </div>
 
         {/* Add Post */}
-        <div className="w-full">
+        <div className="w-full text-center">
           <AddPost fetchPosts={fetchPosts} />
         </div>
       </div>
