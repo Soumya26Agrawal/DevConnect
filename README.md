@@ -4,12 +4,6 @@
 
 ---
 
-## 📸 Preview
-
-> _Add a screenshot or preview GIF of your homepage here_
-
----
-
 ## 🚀 Features
 
 - 🔐 Seamless authentication powered by [Clerk](https://clerk.dev)
@@ -37,8 +31,10 @@
 
 ## ⚙️ Getting Started
 
-### 1. Clone the Repository
+### Clone, Install and Run
 
 ```bash
 git clone https://github.com/your-username/devconnect.git
 cd devconnect
+npm install
+npm run dev
