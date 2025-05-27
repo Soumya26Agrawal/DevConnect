@@ -31,7 +31,7 @@
 
 ## 🌐 Live Demo
 
-Check out the live version of DevConnect here: [https://your-live-url.com](https://dev-connect-one-rosy.vercel.app/)
+Check out the live version of DevConnect here: [LiveUrl](https://dev-connect-one-rosy.vercel.app/)
 
 ---
 
