@@ -26,15 +26,24 @@ export async function POST(req) {
     const { username } = await req.json();
     const myUser = await currentUser();
     await connectMongo();
-    const myMongoDbId = await User.findOne({ clerkId: myUser.id }, { _id: 1 });
-
+    const myMongoDbIdDoc = await User.findOne(
+      { clerkId: myUser.id },
+      { _id: 1 }
+    );
+    const myMongoDbId = myMongoDbIdDoc._id;
     // Fetch the user from the database
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username }).lean();
     if (!user) {
       throw new Error("User not found");
     }
-    if (user.followers.includes(myMongoDbId)) {
+    if (
+      user.followers.some(
+        (followerId) => followerId.toString() === myMongoDbId.toString() //includes method does not work and === also does not work on mongodb objects comparison
+      ) // .equals () is used to compare MongoDB ObjectIds
+    ) {
       user.isFollowing = true;
+    } else {
+      user.isFollowing = false;
     }
     console.log("User found:", user);
     return NextResponse.json(
