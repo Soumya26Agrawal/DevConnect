@@ -34,7 +34,7 @@
 ### Clone, Install and Run
 
 ```bash
-git clone https://github.com/your-username/devconnect.git
+git clone https://github.com/Soumya26Agrawal/DevConnect.git
 cd devconnect
 npm install
 npm run dev
